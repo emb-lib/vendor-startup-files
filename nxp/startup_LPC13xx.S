@@ -65,19 +65,19 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 ; External Interrupts
 
                 DCD    PIN_INT0_Handler      ; All GPIO pin can be routed to PIN_INTx
-                DCD    PIN_INT1_Handler
-                DCD    PIN_INT2_Handler
-                DCD    PIN_INT3_Handler
-                DCD    PIN_INT4_Handler
-                DCD    PIN_INT5_Handler
-                DCD    PIN_INT6_Handler
-                DCD    PIN_INT7_Handler
-                DCD    GINT0_Handler
+                DCD    PIN_INT1_Handler      ; All GPIO pin can be routed to PIN_INTx
+                DCD    PIN_INT2_Handler      ; All GPIO pin can be routed to PIN_INTx
+                DCD    PIN_INT3_Handler      ; All GPIO pin can be routed to PIN_INTx
+                DCD    PIN_INT4_Handler      ; All GPIO pin can be routed to PIN_INTx
+                DCD    PIN_INT5_Handler      ; All GPIO pin can be routed to PIN_INTx
+                DCD    PIN_INT6_Handler      ; All GPIO pin can be routed to PIN_INTx
+                DCD    PIN_INT7_Handler      ; All GPIO pin can be routed to PIN_INTx
+                DCD    GINT0_Handler         ; All GPIO pin can be routed to PIN_INTx
                 DCD    GINT1_Handler         ; PIO0 (0:7) 
-                DCD    0
-                DCD    0
-                DCD    OSTIMER_Handler
-                DCD    0
+                DCD    0                     ; Reserved
+                DCD    0                     ; Reserved
+                DCD    OSTIMER_Handler       ; OS Timer
+                DCD    0                     ; Reserved
                 DCD    SSP1_Handler          ; SSP1 
                 DCD    I2C_Handler           ; I2C 
                 DCD    CT16B0_Handler        ; 16-bit Timer0 
@@ -95,7 +95,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD    OSCFAIL_Handler       ; OSC FAIL 
                 DCD    PVTCIRCUIT_Handler    ; PVT CIRCUIT 
                 DCD    USBWakeup_Handler     ; USB wake up 
-                DCD    0
+                DCD    0                     ; Reserved
 __Vectors_End
                 IF      :LNOT::DEF:NO_CRP
                 AREA    |.ARM.__at_0x02FC|, CODE, READONLY

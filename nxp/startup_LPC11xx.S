@@ -63,6 +63,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     PendSV_Handler            ; PendSV Handler
                 DCD     SysTick_Handler           ; SysTick Handler
 
+                ; External Interrupts
                 DCD     SLWU_INT0_IRQHandler      ; Start logic wake-up interrupt 0
                 DCD     SLWU_INT1_IRQHandler      ; Start logic wake-up interrupt 1
                 DCD     SLWU_INT2_IRQHandler      ; Start logic wake-up interrupt 2
@@ -91,11 +92,12 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     WDT_IRQHandler            ; Watchdog timer
                 DCD     BOD_IRQHandler            ; Brown Out Detect
                 DCD     Reserved_IRQHandler       ; Reserved
-                DCD     PIO_3_IRQHandler	  ; GPIO interrupt status of port 3
+                DCD     PIO_3_IRQHandler          ; GPIO interrupt status of port 3
                 DCD     PIO_2_IRQHandler          ; GPIO interrupt status of port 2
                 DCD     PIO_1_IRQHandler          ; GPIO interrupt status of port 1
                 DCD     PIO_0_IRQHandler          ; GPIO interrupt status of port 0
 	
+__Vectors_End
 	;; 48 vector entries. We pad to 128 to fill the 0x0 - 0x1FF REMAP address space
 
                 DCD     0xFFFFFFFF                ; Datafill
@@ -109,18 +111,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
 
-        	DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-
-        	DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
@@ -131,18 +122,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
 
-        	DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-
-        	DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
@@ -153,18 +133,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
 
-        	DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-                DCD     0xFFFFFFFF                ; Datafill
-
-        	DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
@@ -175,7 +144,7 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
 
-        	DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
@@ -186,7 +155,39 @@ __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     0xFFFFFFFF                ; Datafill
                 DCD     0xFFFFFFFF                ; Datafill
 
-__Vectors_End
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+                DCD     0xFFFFFFFF                ; Datafill
+
                 IF      :LNOT::DEF:NO_CRP
                 AREA    |.ARM.__at_0x02FC|, CODE, READONLY
 CRP_Key         DCD     0xFFFFFFFF
