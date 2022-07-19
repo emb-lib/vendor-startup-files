@@ -286,7 +286,7 @@ source += s9 + weaks0 + weaks1 + os.linesep + '#endif // NDEBUG' + os.linesep + 
 #
 dirname = filename.lower()
 
-stm32_proper_name = os.path.join( os.path.dirname(sys.argv[1]), '../stm32-proper-name.txt' )
+stm32_proper_name = '../stm32-proper-name.txt'
 
 if os.path.exists(stm32_proper_name):
     with open( stm32_proper_name, 'rt' ) as stm32_names_f:
