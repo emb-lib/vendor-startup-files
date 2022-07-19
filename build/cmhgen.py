@@ -209,8 +209,9 @@ filename = re.match(filename_pattern, sys.argv[1], re.IGNORECASE).groups()[0]
 #
 #   Get out handlers info
 #
-begin_pattern   = '\s*; External Interrupts'
-handler_pattern = '\s+\w+\s+(\w+)\s+;\s(.+)'
+comment_pattern = '^\s*;'
+begin_pattern   = '\s+DCD\s+SysTick_Handler'
+handler_pattern = '\s+DCD\s+(\w+)\s*?;\s*(.+)'
 end_pattern     = '__Vectors_End'
 
 ProcessData = False
@@ -229,7 +230,15 @@ for i in src:
     if ProcessData:
         if d.strip() == '':
             continue
-        hrec = re.match( handler_pattern, d).groups()
+        if re.match( comment_pattern, d):
+            continue
+
+        mres = re.match( handler_pattern, d)
+        if not mres:
+            print('E: invalid format: ', d)
+            sys.exit(-1)
+        
+        hrec = mres.groups()
         Handlers.append( hrec )
         HLengths.append( len( hrec[0] ) )
     
