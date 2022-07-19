@@ -203,7 +203,7 @@ with open( sys.argv[1], 'rb') as f:
                                                                                     
 filename_pattern = '.*startup_(\w+)\.s'
 
-filename = re.match(filename_pattern, sys.argv[1]).groups()[0]
+filename = re.match(filename_pattern, sys.argv[1], re.IGNORECASE).groups()[0]
                                                                                         
 #-------------------------------------------------------------------------------    
 #
