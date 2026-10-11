@@ -201,7 +201,7 @@ print('process file: ' + sys.argv[1])
 with open( sys.argv[1], 'rb') as f:                                                 
     src = f.readlines()
                                                                                     
-filename_pattern = '.*startup_(\w+)\.s'
+filename_pattern = r'.*startup_(\w+)\.s'
 
 filename = re.match(filename_pattern, sys.argv[1], re.IGNORECASE).groups()[0]
                                                                                         
@@ -209,10 +209,10 @@ filename = re.match(filename_pattern, sys.argv[1], re.IGNORECASE).groups()[0]
 #
 #   Get out handlers info
 #
-comment_pattern = '^\s*;'
-begin_pattern   = '\s+DCD\s+SysTick_Handler'
-handler_pattern = '\s+DCD\s+(\w+)\s*?;\s*(.+)'
-end_pattern     = '__Vectors_End'
+comment_pattern = r'^\s*;'
+begin_pattern   = r'\s+DCD\s+SysTick_Handler'
+handler_pattern = r'\s+DCD\s+(\w+)\s*?;\s*(.+)'
+end_pattern     = r'__Vectors_End'
 
 ProcessData = False
 Handlers    = []
